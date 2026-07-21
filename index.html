@@ -19,14 +19,13 @@
   <!-- ナビゲーション -->
   <header class="header" id="header">
     <div class="header-inner">
-      <a href="#top" class="logo">
-        <span class="logo-en">Kitchen</span>
-        <span class="logo-ja">ラディッシュ</span>
+      <a href="#top" class="logo" aria-label="Kitchen ラディッシュ ホーム">
+        <img src="img/logo_transparent.png" alt="Kitchen ラディッシュ" class="header-logo-img" />
       </a>
       <nav class="nav" id="nav">
         <ul class="nav-list">
           <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#menu" class="nav-link">ランチメニュー</a></li>
           <li><a href="#hours" class="nav-link">営業時間</a></li>
           <li><a href="#kitchen-car" class="nav-link">Kitchen Car</a></li>
           <li><a href="#access" class="nav-link">Access</a></li>
@@ -43,7 +42,7 @@
     <div class="mobile-menu" id="mobile-menu">
       <ul class="mobile-nav-list">
         <li><a href="#about" class="mobile-nav-link">About</a></li>
-        <li><a href="#menu" class="mobile-nav-link">Menu</a></li>
+        <li><a href="#menu" class="mobile-nav-link">ランチメニュー</a></li>
         <li><a href="#hours" class="mobile-nav-link">営業時間</a></li>
         <li><a href="#kitchen-car" class="mobile-nav-link">Kitchen Car</a></li>
         <li><a href="#access" class="mobile-nav-link">Access</a></li>
@@ -57,19 +56,15 @@
 
   <!-- ヒーローセクション -->
   <section class="hero" id="top">
-    <!-- 背景画像スライダー -->
-    <div class="hero-slider">
-      <div class="hero-slide active" style="background-image: url('img/マラサダ.jpg');"></div>
-      <div class="hero-slide" style="background-image: url('img/menu1.png');"></div>
-    </div>
+    <!-- 背景画像 -->
+    <div class="hero-bg" style="background-image: url('img/せいろ蒸しご飯プレート.jpg');"></div>
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <p class="hero-subtitle">横須賀・粟田の家庭料理店</p>
-      <h1 class="hero-title">
-        <span class="hero-title-en">Kitchen</span>
-        <span class="hero-title-ja">ラディッシュ</span>
+      <h1 class="hero-logo-wrap">
+        <img src="img/logo_transparent.png" alt="Kitchen ラディッシュ" class="hero-logo-img" />
       </h1>
+      <p class="hero-subtitle">横須賀・粟田の家庭料理店</p>
       <p class="hero-desc">横須賀野菜の美味しさを、手づくりの温かさで。<br />愛犬と一緒に、アットホームなひとときを。</p>
       <a href="#about" class="btn-primary">詳しくはこちら</a>
     </div>
@@ -125,15 +120,15 @@
           </div>
         </div>
         <div class="about-images">
-          <div class="about-img-wrap main">
-            <img src="img/店内.jpg" alt="Kitchen ラディッシュ 店内" class="about-img" />
-          </div>
-          <div class="about-img-grid">
-            <div class="about-img-wrap sub">
-              <img src="img/犬①.jpg" alt="全席ワンちゃん同伴可能" class="about-img" />
+          <div class="about-gallery-grid">
+            <div class="about-gallery-item">
+              <img src="img/店内.jpg" alt="Kitchen ラディッシュ 店内" class="about-gallery-img" />
             </div>
-            <div class="about-img-wrap sub">
-              <img src="img/犬②.jpg" alt="愛犬と過ごすアットホームな時間" class="about-img" />
+            <div class="about-gallery-item">
+              <img src="img/横須賀野菜.jpg" alt="横須賀野菜" class="about-gallery-img" />
+            </div>
+            <div class="about-gallery-item">
+              <img src="img/犬①.jpg" alt="全席ワンちゃん同伴可能" class="about-gallery-img" />
             </div>
           </div>
         </div>
@@ -145,43 +140,74 @@
   <section class="section menu-section" id="menu">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Our Menu</p>
-        <h2 class="section-title">メニュー</h2>
+        <p class="section-label">Lunch Menu</p>
+        <h2 class="section-title">ランチメニュー</h2>
         <div class="title-deco"></div>
       </div>
 
-      <!-- メニュースライダー -->
-      <div class="menu-slider-container">
-        <div class="menu-slider">
-          <div class="menu-slide active">
-            <img src="img/menu1.png" alt="メニュー画像 1" class="slider-img" />
-          </div>
-          <div class="menu-slide">
-            <img src="img/menu2.png" alt="メニュー画像 2" class="slider-img" />
-          </div>
-          <div class="menu-slide">
-            <img src="img/menu3.png" alt="メニュー画像 3" class="slider-img" />
-          </div>
-          <div class="menu-slide">
-            <img src="img/menu4.png" alt="メニュー画像 4" class="slider-img" />
-          </div>
-        </div>
-
-        <!-- スライダーコントロール -->
-        <div class="slider-controls">
-          <button class="slider-btn prev-btn" id="prev-slide" aria-label="前の画像">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-          </button>
-          
-          <div class="slider-counter" id="slider-counter">1 / 4</div>
-          
-          <button class="slider-btn next-btn" id="next-slide" aria-label="次の画像">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </button>
+      <!-- ランチメニュー全体写真 -->
+      <div class="lunch-menu-banner">
+        <div class="lunch-menu-img-wrap">
+          <img src="img/ランチメニュー.jpg" alt="Kitchen ラディッシュ ランチメニュー" class="lunch-menu-img" />
         </div>
       </div>
 
-      <p class="menu-note">詳しいメニューは店頭またはInstagramをご確認ください。</p>
+      <!-- おすすめプレートスライダー -->
+      <div class="plate-slider-section">
+        <h3 class="plate-section-title">人気のメインプレート</h3>
+        <div class="plate-slider-container">
+          <div class="plate-slider" id="plateSlider">
+            <div class="plate-slide active">
+              <div class="plate-card">
+                <div class="plate-img-wrap">
+                  <img src="img/ガーリックシュリンププレート.png" alt="ガーリックシュリンププレート" class="plate-img" />
+                </div>
+                <div class="plate-card-info">
+                  <h4>ガーリックシュリンププレート</h4>
+                  <p>香ばしいガーリックとプリプリ海老の絶妙な組み合わせ！旨味たっぷりの大人気ハワイアン風プレート。</p>
+                </div>
+              </div>
+            </div>
+            <div class="plate-slide">
+              <div class="plate-card">
+                <div class="plate-img-wrap">
+                  <img src="img/せいろ蒸しご飯プレート.jpg" alt="せいろ蒸しご飯プレート" class="plate-img" />
+                </div>
+                <div class="plate-card-info">
+                  <h4>せいろ蒸しご飯プレート</h4>
+                  <p>新鮮な横須賀野菜をたっぷり使用。素材本来の甘みと美味しさをふっくら蒸し上げたヘルシー看板プレート。</p>
+                </div>
+              </div>
+            </div>
+            <div class="plate-slide">
+              <div class="plate-card">
+                <div class="plate-img-wrap">
+                  <img src="img/じっくり煮込んだビーフシチュープレート.png" alt="じっくり煮込んだビーフシチュープレート" class="plate-img" />
+                </div>
+                <div class="plate-card-info">
+                  <h4>じっくり煮込んだビーフシチュープレート</h4>
+                  <p>お肉が口の中でとろける美味しさ。時間をかけて手づくりで煮込んだ濃厚な自家製ビーフシチュー。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- スライダーコントロール -->
+          <div class="slider-controls">
+            <button class="slider-btn prev-btn" id="platePrevBtn" aria-label="前の料理へ">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            
+            <div class="slider-counter" id="plateCounter">1 / 3</div>
+            
+            <button class="slider-btn next-btn" id="plateNextBtn" aria-label="次の料理へ">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p class="menu-note">※季節や仕入れ状況によりメニュー内容や付け合わせが変更となる場合がございます。</p>
     </div>
   </section>
 
@@ -200,7 +226,7 @@
               <tr>
                 <th>曜日</th>
                 <th>ランチ</th>
-                <th>ディナー</th>
+                <th>ディナー <span class="badge-reservation-head">要予約</span></th>
               </tr>
             </thead>
             <tbody>
@@ -216,7 +242,7 @@
               <tr>
                 <td class="day">水曜日</td>
                 <td>11:00 〜 16:00</td>
-                <td>17:30 〜 20:00</td>
+                <td>17:30 〜 20:00 <span class="badge-reservation-inline">要予約</span></td>
               </tr>
               <tr class="row-alt">
                 <td class="day">木曜日</td>
@@ -231,7 +257,7 @@
               <tr class="row-alt">
                 <td class="day">土曜日</td>
                 <td>11:00 〜 16:00</td>
-                <td>17:30 〜 21:00</td>
+                <td>17:30 〜 21:00 <span class="badge-reservation-inline">要予約</span></td>
               </tr>
               <tr>
                 <td class="day">日曜日</td>
@@ -239,6 +265,8 @@
               </tr>
             </tbody>
           </table>
+          <p class="dinner-reservation-notice">※ディナー営業は事前のご予約制（要予約）となります。</p>
+        </div>
         </div>
         <div class="hours-info">
           <div class="info-card">
@@ -280,13 +308,14 @@
     <div class="container">
       <div class="section-header">
         <p class="section-label">Kitchen Car</p>
-        <h2 class="section-title">ALOHA Kitchen</h2>
+        <div class="aloha-logo-wrap">
+          <img src="img/aloha_kitchen_logo_transparent.png" alt="ALOHA Kitchen" class="aloha-logo-img" />
+        </div>
         <div class="title-deco"></div>
         <p class="section-desc">ハワイアンなキッチンカーやってます！</p>
       </div>
       <div class="kitchen-car-content">
         <div class="kitchen-car-text">
-          <div class="aloha-badge">ALOHA Kitchen</div>
           <h3 class="kitchen-car-heading">ハワイアンドーナツ<br />マラサダ</h3>
           <p>本場ハワイの伝統的なドーナツ「マラサダ」をメインに、ハワイの雰囲気たっぷりのキッチンカーで販売中！外はサクサク、中はふわふわの本格マラサダをぜひご賞味ください。</p>
           <p class="kitchen-car-note">キッチンカーの詳細・出店スケジュールはInstagramをご確認ください。</p>
@@ -295,17 +324,36 @@
             Instagramをチェック
           </a>
         </div>
-        <div class="kitchen-car-images">
-          <div class="kitchen-car-grid">
-            <div class="kitchen-car-img-wrap">
-              <img src="img/キッチンカー.jpg" alt="ALOHA Kitchen キッチンカー" class="kitchen-car-photo" />
+        <div class="kc-menu-slider-wrap">
+          <div class="kc-menu-slider-container">
+            <div class="kc-menu-slider" id="kcMenuSlider">
+              <div class="kc-menu-slide active">
+                <img src="img/キッチンカー　メニュー表①.png" alt="ALOHA Kitchen メニュー表 ①" class="kc-menu-img" />
+              </div>
+              <div class="kc-menu-slide">
+                <img src="img/キッチンカー　メニュー表②.jpg" alt="ALOHA Kitchen メニュー表 ②" class="kc-menu-img" />
+              </div>
+              <div class="kc-menu-slide">
+                <img src="img/キッチンカー　メニュー表③.jpg" alt="ALOHA Kitchen メニュー表 ③" class="kc-menu-img" />
+              </div>
             </div>
-            <div class="kitchen-car-img-wrap">
-              <img src="img/マラサダ.jpg" alt="マラサダ" class="kitchen-car-photo" />
+
+            <!-- スライダーコントロール（矢印とページ数） -->
+            <div class="kc-slider-controls">
+              <button class="kc-slider-btn prev-btn" id="kcPrevBtn" aria-label="前のメニュー表へ">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                <span>前へ</span>
+              </button>
+              
+              <div class="kc-slider-counter" id="kcCounter">
+                <span class="kc-current">1</span> / <span class="kc-total">3</span>
+              </div>
+              
+              <button class="kc-slider-btn next-btn" id="kcNextBtn" aria-label="次のメニュー表へ">
+                <span>次へ</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
             </div>
-          </div>
-          <div class="kitchen-car-main-img">
-            <img src="img/キッチンカー　メニュー表.png" alt="ALOHA Kitchen マラサダメニュー表" class="menu-img-large" />
           </div>
         </div>
       </div>
@@ -404,14 +452,27 @@
       </svg>
     </div>
     <div class="footer-inner">
-      <div class="footer-logo">
-        <span class="logo-en">Kitchen</span>
-        <span class="logo-ja">ラディッシュ</span>
+      <div class="footer-logo-wrap">
+        <a href="#top" aria-label="Kitchen ラディッシュ トップへ">
+          <img src="img/logo_transparent.png" alt="Kitchen ラディッシュ" class="footer-logo-img" />
+        </a>
       </div>
       <div class="footer-info">
         <p>〒239-0845 神奈川県横須賀市粟田２丁目３−８</p>
         <p>TEL: <a href="tel:046-874-9959">046-874-9959</a></p>
         <p>定休日: 火曜日・日曜日</p>
+      </div>
+      <div class="footer-sitemap">
+        <p class="sitemap-title">サイトマップ</p>
+        <ul class="sitemap-list">
+          <li><a href="#top">トップ</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">ランチメニュー</a></li>
+          <li><a href="#hours">営業時間</a></li>
+          <li><a href="#kitchen-car">Kitchen Car</a></li>
+          <li><a href="#access">アクセス</a></li>
+          <li><a href="#contact">ご予約・お問い合わせ</a></li>
+        </ul>
       </div>
       <div class="footer-sns">
         <a href="https://www.instagram.com/kitchen_radish/" target="_blank" rel="noopener noreferrer" class="footer-sns-link" aria-label="Instagram">

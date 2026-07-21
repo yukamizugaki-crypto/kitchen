@@ -3,13 +3,16 @@
 // ===========================
 const header = document.getElementById('header');
 
-window.addEventListener('scroll', () => {
+function checkHeaderScroll() {
   if (window.scrollY > 30) {
     header.classList.add('scrolled');
   } else {
     header.classList.remove('scrolled');
   }
-}, { passive: true });
+}
+
+window.addEventListener('scroll', checkHeaderScroll, { passive: true });
+document.addEventListener('DOMContentLoaded', checkHeaderScroll);
 
 // ===========================
 // Hamburger Menu
@@ -104,51 +107,72 @@ window.addEventListener('scroll', updateActiveNav, { passive: true });
 updateActiveNav();
 
 // ===========================
-// Menu Image Slider (Manual Carousel)
+// Main Plate Slider (Manual Carousel)
 // ===========================
-const slides = document.querySelectorAll('.menu-slide');
-const prevBtn = document.getElementById('prev-slide');
-const nextBtn = document.getElementById('next-slide');
-const counter = document.getElementById('slider-counter');
-let currentSlide = 0;
-const totalSlides = slides.length;
+const plateSlides = document.querySelectorAll('.plate-slide');
+const platePrevBtn = document.getElementById('platePrevBtn');
+const plateNextBtn = document.getElementById('plateNextBtn');
+const plateCounter = document.getElementById('plateCounter');
+let currentPlateSlide = 0;
+const totalPlateSlides = plateSlides.length;
 
-function updateSlider() {
-  slides.forEach((slide, index) => {
-    slide.classList.toggle('active', index === currentSlide);
+function updatePlateSlider() {
+  plateSlides.forEach((slide, index) => {
+    slide.classList.toggle('active', index === currentPlateSlide);
   });
-  if (counter) {
-    counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+  if (plateCounter) {
+    plateCounter.textContent = `${currentPlateSlide + 1} / ${totalPlateSlides}`;
   }
 }
 
-if (prevBtn && nextBtn && slides.length > 0) {
-  prevBtn.addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateSlider();
+if (platePrevBtn && plateNextBtn && totalPlateSlides > 0) {
+  platePrevBtn.addEventListener('click', () => {
+    currentPlateSlide = (currentPlateSlide - 1 + totalPlateSlides) % totalPlateSlides;
+    updatePlateSlider();
   });
 
-  nextBtn.addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateSlider();
+  plateNextBtn.addEventListener('click', () => {
+    currentPlateSlide = (currentPlateSlide + 1) % totalPlateSlides;
+    updatePlateSlider();
   });
 }
 
 // ===========================
-// Hero Image Slider (Auto Carousel)
+// Kitchen Car Menu Slider (Manual Carousel 1 - 3)
 // ===========================
-const heroSlides = document.querySelectorAll('.hero-slide');
-let currentHeroSlide = 0;
-const totalHeroSlides = heroSlides.length;
+const kcSlides = document.querySelectorAll('.kc-menu-slide');
+const kcPrevBtn = document.getElementById('kcPrevBtn');
+const kcNextBtn = document.getElementById('kcNextBtn');
+const kcCounter = document.getElementById('kcCounter');
+let currentKcSlide = 0;
+const totalKcSlides = kcSlides.length;
 
-function nextHeroSlide() {
-  if (totalHeroSlides > 0) {
-    heroSlides[currentHeroSlide].classList.remove('active');
-    currentHeroSlide = (currentHeroSlide + 1) % totalHeroSlides;
-    heroSlides[currentHeroSlide].classList.add('active');
+function updateKcSlider() {
+  kcSlides.forEach((slide, index) => {
+    slide.classList.toggle('active', index === currentKcSlide);
+  });
+  if (kcCounter) {
+    const currentSpan = kcCounter.querySelector('.kc-current');
+    const totalSpan = kcCounter.querySelector('.kc-total');
+    if (currentSpan && totalSpan) {
+      currentSpan.textContent = currentKcSlide + 1;
+      totalSpan.textContent = totalKcSlides;
+    } else {
+      kcCounter.textContent = `${currentKcSlide + 1} / ${totalKcSlides}`;
+    }
   }
 }
 
-if (totalHeroSlides > 1) {
-  setInterval(nextHeroSlide, 5000);
+if (kcPrevBtn && kcNextBtn && totalKcSlides > 0) {
+  kcPrevBtn.addEventListener('click', () => {
+    currentKcSlide = (currentKcSlide - 1 + totalKcSlides) % totalKcSlides;
+    updateKcSlider();
+  });
+
+  kcNextBtn.addEventListener('click', () => {
+    currentKcSlide = (currentKcSlide + 1) % totalKcSlides;
+    updateKcSlider();
+  });
 }
+
+
